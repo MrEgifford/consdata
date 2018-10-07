@@ -2,9 +2,12 @@ package com.jeden.recruit.consdata.helpers;
 
 public enum PropertyKey {
 	
-	API_KEY("api_key");
+	EXTERNAL_API_TYPE("externalApiType"),
+	EXTERNAL_API_PATH("externalApiPath"),
+	API_KEY("apiKey");
 	
-	private String propertyKey;
+	
+	private final String propertyKey;
 	
 	PropertyKey(String aPropertyKey){
 		this.propertyKey = aPropertyKey;

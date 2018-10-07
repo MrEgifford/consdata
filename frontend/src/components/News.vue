@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         callRest(){
-            axios.get('/news')
+            axios.get('/api/news')
                 .then(response=>{
                     this.response = response.data
                 })
