@@ -1,4 +1,4 @@
-package com.jeden.recruit.consdata.news.external.rest.to;
+package com.jeden.recruit.consdata.news.external.rest.dto;
 
 import java.time.LocalDateTime;
 
@@ -20,7 +20,5 @@ public class ArticleResponse {
 	private String urlToImage;
 	
 	private LocalDateTime publishedAt; 
-	
-	private String content;
 
 }

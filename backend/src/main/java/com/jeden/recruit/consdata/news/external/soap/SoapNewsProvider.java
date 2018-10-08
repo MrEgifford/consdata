@@ -1,17 +1,23 @@
 package com.jeden.recruit.consdata.news.external.soap;
 
+import java.util.Map;
+
+import javax.naming.ConfigurationException;
+
+import com.jeden.recruit.consdata.exception.NotImplementedException;
 import com.jeden.recruit.consdata.news.external.NewsProvider;
-import com.jeden.recruit.consdata.news.external.rest.to.NewsResponse;
+import com.jeden.recruit.consdata.news.external.rest.dto.NewsResponse;
 
 public class SoapNewsProvider implements NewsProvider {
 
-	private static final String NOT_IMPLEMENTED = "NOT_IMPLEMENTED";
-
 	@Override
 	public NewsResponse getAllForCountry(String countryCode) {
-		NewsResponse response = new NewsResponse();
-		response.setStatus(NOT_IMPLEMENTED);
-		return response;
+		throw new NotImplementedException();
+	}
+
+	@Override
+	public NewsResponse getAllForParams(Map<String, String> urlParameters) throws ConfigurationException {
+		throw new NotImplementedException();
 	}
 
 }

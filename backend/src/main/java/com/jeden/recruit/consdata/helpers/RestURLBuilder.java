@@ -8,11 +8,9 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponentsBuilder;
 
-public class RestURLBuilder {
-	
-	private final String CATEGORY_PARAM = "category";
-	private final String COUNTRY_PARAM = "country";
+import com.jeden.recruit.consdata.cons.UrlParams;
 
+public class RestURLBuilder {
 	
 	private final String apiURL;
 	
@@ -31,13 +29,18 @@ public class RestURLBuilder {
 		return new RestURLBuilder(apiURL, apiKey);
 	}
 	
-	public RestURLBuilder forCountry(String countryCode) {
-		params.add(COUNTRY_PARAM, countryCode);
+	public RestURLBuilder withCountry(String countryCode) {
+		params.add(UrlParams.COUNTRY_PARAM, countryCode);
 		return this;
 	}
 	
-	public RestURLBuilder forCategory(String category) {
-		params.add(CATEGORY_PARAM, category);
+	public RestURLBuilder withCategory(String category) {
+		params.add(UrlParams.CATEGORY_PARAM, category);
+		return this;
+	}
+	
+	public RestURLBuilder withParams(Map<String,String> parameters) {
+		parameters.forEach((key,value) -> params.add(key, value));
 		return this;
 	}
 	
@@ -46,9 +49,9 @@ public class RestURLBuilder {
 			.scheme("https")
 			.host(this.apiURL)
 			.queryParams(params)
-			.queryParam("apiKey", apiKey)
-			.build().toUri();
-		
+			.queryParam(UrlParams.API_KEY_PARAM, apiKey)
+			.build()
+			.toUri();
 	}
 	
 	

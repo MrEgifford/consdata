@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.jeden.recruit.consdata.config.ConfPropKeys;
 import com.jeden.recruit.consdata.news.external.rest.RestNewsProvider;
+import com.jeden.recruit.consdata.news.external.soap.SoapNewsProvider;
 
 @Configuration
 public class NewsProviderFactory {
@@ -14,6 +15,12 @@ public class NewsProviderFactory {
 	@ConditionalOnProperty(name=ConfPropKeys.NEWS_EXTERNAL_API_TYPE, havingValue="rest")
 	public NewsProvider restNewsProvider() {
 		return new RestNewsProvider();
+	}
+	
+	@Bean
+	@ConditionalOnProperty(name=ConfPropKeys.NEWS_EXTERNAL_API_TYPE, havingValue="soap")
+	public NewsProvider soapNewsProvider() {
+		return new SoapNewsProvider();
 	}
 	
 }

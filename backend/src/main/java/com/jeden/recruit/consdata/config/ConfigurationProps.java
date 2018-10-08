@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import com.jeden.recruit.consdata.helpers.PropertyKey;
+import com.jeden.recruit.consdata.cons.PropertyKey;
 
 @Configuration
 @ConfigurationProperties(prefix = "news")

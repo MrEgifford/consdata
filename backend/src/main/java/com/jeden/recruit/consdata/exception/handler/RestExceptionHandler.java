@@ -1,4 +1,4 @@
-package com.jeden.recruit.consdata.exception;
+package com.jeden.recruit.consdata.exception.handler;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus.Series;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
+
+import com.jeden.recruit.consdata.exception.RestClientConnectionException;
 
 
 

@@ -1,6 +1,5 @@
 package com.jeden.recruit.consdata.helpers;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URI;
@@ -30,7 +29,7 @@ public class RestURLBuilderTest {
 		String countryCode = "pl";
 		
 		URI builtURI = RestURLBuilder.createRestURL(testApiURL, testApiKey)
-			.forCountry(countryCode).buildURL();
+			.withCountry(countryCode).buildURL();
 		
 		assertTrue(builtURI.toString().contains(countryCode));
 	}

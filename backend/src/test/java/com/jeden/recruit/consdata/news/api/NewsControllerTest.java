@@ -1,4 +1,4 @@
-package com.jeden.recruit.consdata.rest.api;
+package com.jeden.recruit.consdata.news.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.jeden.recruit.consdata.helpers;
+package com.jeden.recruit.consdata.cons;
 
 public enum Country {
 	

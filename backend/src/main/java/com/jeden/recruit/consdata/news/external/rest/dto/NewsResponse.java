@@ -1,4 +1,4 @@
-package com.jeden.recruit.consdata.news.external.rest.to;
+package com.jeden.recruit.consdata.news.external.rest.dto;
 
 import java.util.List;
 

@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jeden.recruit.consdata.helpers.Country;
+import com.jeden.recruit.consdata.cons.Country;
 import com.jeden.recruit.consdata.news.core.NewsFacade;
+import com.jeden.recruit.consdata.news.dto.ArticleDto;
+import com.jeden.recruit.consdata.news.dto.NewsDto;
 import com.jeden.recruit.consdata.news.external.NewsProvider;
-import com.jeden.recruit.consdata.news.to.ArticleDto;
-import com.jeden.recruit.consdata.news.to.NewsDto;
 
 
 @RestController

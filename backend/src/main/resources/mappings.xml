@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+  <mapping>
+      <class-a>com.jeden.recruit.consdata.news.dto.NewsDto</class-a>
+      <class-b>com.jeden.recruit.consdata.news.external.rest.dto.NewsResponse</class-b>   
+  </mapping>
+
+  <mapping>
+      <class-a>com.jeden.recruit.consdata.news.dto.ArticleDto</class-a>
+      <class-b>com.jeden.recruit.consdata.news.external.rest.dto.ArticleResponse</class-b>   
+      <field>
+        <a>articleUrl</a>
+        <b>url</b>
+      </field>
+      <field>
+        <a>date</a>
+        <b>publishedAt</b>
+      </field>
+      <field>
+        <a>imageUrl</a>
+        <b>urlToImage</b>
+      </field>
+  </mapping>
+
+</mappings>
