@@ -20,7 +20,7 @@ public class RestURLBuilderTest {
 		
 		assertTrue(builtURI.toString().contains(testApiURL));
 		assertTrue(builtURI.toString().contains(testApiKey));
-		assertTrue(builtURI.toString().contains("https"));
+		assertTrue(builtURI.toString().contains("http"));
 		
 	}
 	

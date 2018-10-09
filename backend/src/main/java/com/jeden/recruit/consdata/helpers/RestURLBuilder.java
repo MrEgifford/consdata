@@ -46,7 +46,7 @@ public class RestURLBuilder {
 	
 	public URI buildURL() {
 		return UriComponentsBuilder.newInstance()
-			.scheme("https")
+			.scheme("http")
 			.host(this.apiURL)
 			.queryParams(params)
 			.queryParam(UrlParams.API_KEY_PARAM, apiKey)

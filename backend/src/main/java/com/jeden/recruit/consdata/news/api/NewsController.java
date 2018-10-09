@@ -5,6 +5,7 @@ import java.util.Collections;
 import javax.naming.ConfigurationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,23 +24,12 @@ public class NewsController {
 	@Autowired
 	private NewsFacade newsFacade;
 	
-	@RequestMapping("/news")
-	public NewsDto news() {
-		NewsDto news = new NewsDto();
-		news.setCountry(Country.PL);
-		
-		ArticleDto article = new ArticleDto();
-		
-		article.setAuthor("testAuthor");
-		article.setDescription("test description 2");
-		
-		news.setArticles( Collections.singletonList( article));
+	@RequestMapping("/news/{country}/{category}")
+	public NewsDto news(@PathVariable String country, @PathVariable String category) {
 		
 		
-		newsFacade.findForCountry(Country.PL.getShortCode());
+		return newsFacade.findForCountry(country);
 		
-		
-		return news;
 		
 	}
 

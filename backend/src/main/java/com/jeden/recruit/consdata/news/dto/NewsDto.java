@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class NewsDto {
 	
-	private Country country;
+	private String country;
 	
 	private Category category;
 	
