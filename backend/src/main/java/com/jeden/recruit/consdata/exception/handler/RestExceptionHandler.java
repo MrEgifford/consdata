@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus.Series;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
 
-import com.jeden.recruit.consdata.exception.RestClientConnectionException;
+import com.jeden.recruit.consdata.exception.RestClientException;
 
 
 
@@ -33,7 +33,7 @@ public class RestExceptionHandler implements ResponseErrorHandler {
 				convertStreamToString(response.getBody()));
 		
 		logger.error(errorMsg);
-		throw new RestClientConnectionException(errorMsg);
+		throw new RestClientException(errorMsg);
 	}
 	
 	private String convertStreamToString(InputStream is) {

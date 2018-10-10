@@ -2,12 +2,13 @@ package com.jeden.recruit.consdata.news.core.impl;
 
 import java.util.Map;
 
-import javax.naming.ConfigurationException;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.jeden.recruit.consdata.cons.UrlParams;
+import com.jeden.recruit.consdata.exception.ConfigurationException;
 import com.jeden.recruit.consdata.news.core.NewsFacade;
 import com.jeden.recruit.consdata.news.dto.NewsDto;
 import com.jeden.recruit.consdata.news.external.NewsProvider;
@@ -23,28 +24,23 @@ public class NewsFacadeImpl implements NewsFacade {
 	private DozerBeanMapper mapper;
 	
 
+	
+
+
 	@Override
-	public NewsDto findForCountry(String countryCode) {
-		
-		try {
-			
-			NewsResponse newsResponse = newsProvider.getAllForCountry(countryCode);
-			NewsDto newsDto = mapper.map(newsResponse, NewsDto.class);
-			newsDto.setCountry(countryCode);
-			return newsDto;
-			 
-		} catch (ConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return new NewsDto();
+	public NewsDto findForParameters(Map<String, String> requestParameters)  {
+		 NewsResponse allForParams = newsProvider.findAllForParams(requestParameters);
+		 return mapToDto(allForParams, requestParameters);
 	}
 
 
-	@Override
-	public NewsDto findForParameters(Map<String, String> requestParameters) {
-		// TODO Auto-generated method stub
-		return null;
+	private NewsDto mapToDto(NewsResponse newsResponse, Map<String, String> requestParameters) {
+		NewsDto newsDto = mapper.map(newsResponse, NewsDto.class);
+		newsDto.setCountry(requestParameters.get(UrlParams.COUNTRY_PARAM));
+		newsDto.setCategory(requestParameters.get(UrlParams.CATEGORY_PARAM));
+		
+		return newsDto;
+		
 	}
 
 }

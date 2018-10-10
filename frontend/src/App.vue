@@ -1,8 +1,6 @@
 <template>
   <div id="app">
     <News />
-    
-    <router-view/>
   </div>
 </template>
 
@@ -13,13 +11,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   data() {
-  	return{
-    	test: 'testVAlue'
-    	}
   },
   name: 'App',
   components: {
-  	News
+    News
   }
 }
 </script>
