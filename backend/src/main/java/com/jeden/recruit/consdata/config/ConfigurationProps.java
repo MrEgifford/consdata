@@ -25,7 +25,8 @@ public class ConfigurationProps {
 		Optional<String> externalApiURL = 
 				getProperty(PropertyKey.EXTERNAL_API_PATH);
 		Optional<String> apiKey = 
-				getProperty(PropertyKey.API_KEY);
+				getProperty(PropertyKey.API_KEY)
+					.ofNullable(PropertyKey.NEWS_PROVIDER_TYPE_REST.getPropertyKey());
 		checkPropertiesExistance(externalApiURL, apiKey);
 	}
 	

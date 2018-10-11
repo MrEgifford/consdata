@@ -5,6 +5,13 @@ import java.util.Map;
 import com.jeden.recruit.consdata.exception.ConfigurationException;
 import com.jeden.recruit.consdata.news.external.rest.dto.NewsResponse;
 
+/**
+ * Enables the connection to the external news provider API.
+ * Every system providing the news must implement this interface
+ * 
+ * @author Egifford
+ *
+ */
 public interface NewsProvider {
 	
 	

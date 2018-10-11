@@ -12,13 +12,13 @@ import com.jeden.recruit.consdata.news.external.soap.SoapNewsProvider;
 public class NewsProviderFactory {
 	
 	@Bean
-	@ConditionalOnProperty(name=ConfPropKeys.NEWS_EXTERNAL_API_TYPE, havingValue="rest")
+	@ConditionalOnProperty(name=ConfPropKeys.NEWS_PROVIDER_TYPE, havingValue="rest")
 	public NewsProvider restNewsProvider() {
 		return new RestNewsProvider();
 	}
 	
 	@Bean
-	@ConditionalOnProperty(name=ConfPropKeys.NEWS_EXTERNAL_API_TYPE, havingValue="soap")
+	@ConditionalOnProperty(name=ConfPropKeys.NEWS_PROVIDER_TYPE, havingValue="soap")
 	public NewsProvider soapNewsProvider() {
 		return new SoapNewsProvider();
 	}

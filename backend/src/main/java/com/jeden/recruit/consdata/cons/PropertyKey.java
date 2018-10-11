@@ -2,9 +2,12 @@ package com.jeden.recruit.consdata.cons;
 
 public enum PropertyKey {
 	
-	EXTERNAL_API_TYPE("externalApiType"),
+	NEWS_PROVIDER_TYPE("newsProviderType"),
+	NEWS_PROVIDER_TYPE_REST("rest"),
+	
 	EXTERNAL_API_PATH("externalApiPath"),
 	API_KEY("apiKey");
+	
 	
 	
 	private final String propertyKey;

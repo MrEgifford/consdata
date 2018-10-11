@@ -7,9 +7,10 @@
 	<artifactId>backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+                       
 
-	<name>backend</name>
-	<description>Demo project for Spring Boot</description>
+	<name>NewsConsdata</name>
+	<description>Recruit task from Consdata</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -36,6 +37,11 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+            <groupId>org.springframework.restdocs</groupId>
+            <artifactId>spring-restdocs-mockmvc</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
@@ -63,12 +69,35 @@
 	</dependencies>
 
 	<build>
+		<finalName>NewsForConsdataApp</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
+			
+			<plugin>
+			    <groupId>org.asciidoctor</groupId>
+			    <artifactId>asciidoctor-maven-plugin</artifactId>
+			    
+			    <executions>
+			        <execution>
+			        
+			            <id>generate-docs</id>
+			            <phase>prepare-package</phase>
+			            <goals>
+			                <goal>process-asciidoc</goal>
+			            </goals>
+			            <configuration>
+			            	<sourceDirectory>${project.build.directory}/doc</sourceDirectory>
+			                <backend>html</backend>
+			                <attributes>
+			                    <snippets>${project.build.directory}/doc</snippets>
+			                </attributes>
+			            </configuration>
+			        </execution>
+			    </executions>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -90,6 +119,7 @@
 										<include>index.html</include>
 									</includes>
 								</resource>
+								
 							</resources>
 						</configuration>
 					</execution>

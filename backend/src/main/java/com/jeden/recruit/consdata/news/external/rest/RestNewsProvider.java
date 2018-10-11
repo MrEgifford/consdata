@@ -20,7 +20,8 @@ import com.jeden.recruit.consdata.helpers.RestURLBuilder;
 import com.jeden.recruit.consdata.news.external.NewsProvider;
 import com.jeden.recruit.consdata.news.external.rest.dto.NewsResponse;
 /**
- * External REST API gateway.
+ * External REST API gateway to connect third party news service.
+ * To use it set the 'rest' in your configuration as the value for the 'newsProviderType'.
  * 
  * @author Egifford
  *

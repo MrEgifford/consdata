@@ -27,13 +27,13 @@ module.exports = {
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
-    proxyTable: {
+   /*proxyTable: {
         // proxy all requests starting with /api to our Spring Boot backend (localhost:8080)
         '/api': {
           target: 'http://localhost:8080',
           changeOrigin: true
         }
-      },
+      },*/
 
     /**
      * Source Maps

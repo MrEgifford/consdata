@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>recrutation-task-consdata</name>
+	<name>Recruit tas for consdata</name>
 	<url>http://maven.apache.org</url>
 
 	<parent>
@@ -22,6 +22,31 @@
     </modules>
     
     <build>
-		
+    	<plugins>
+		<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-main-app-jar</id>
+						<phase>install</phase>
+						<goals>
+						</goals>
+						<configuration>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>backend/target/dist</directory>
+									<includes>
+										<include>generated-docs/</include>
+										<include>NewsForConsdataApp.jar</include>
+									</includes>
+								</resource>
+								
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

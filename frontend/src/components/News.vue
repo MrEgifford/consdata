@@ -41,7 +41,7 @@
                                 <option value="it">Włoch</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary col-md-2" type="button" @click="callRest(0)">Pokaż</button>
+                        <button class="btn btn-primary col-md-2" type="button" @click="callRest()">Pokaż</button>
                         <div class="col-md-1"/>
                 </b-form>
             </p>
@@ -50,7 +50,7 @@
                 <b-collapse id="collapse1" class="mt-2 ">
                     <b-card class="mx-auto col-md-6 ">
                         <b-input-group prepend="Wpisz szukaną frazę :">
-                            <b-form-input v-model="keyword"></b-form-input>
+                            <b-form-input @keyup.enter="callRest()" v-model="keyword"></b-form-input>
                         </b-input-group>
                     </b-card>
                 </b-collapse>
@@ -102,7 +102,7 @@ export default {
   },
 
   methods: {
-    callRest(pageToShow) {
+    callRest() {
         axios.get(this.generateURL(), 
                 {
                     timeout: 5000,
@@ -119,7 +119,7 @@ export default {
             });
     },
     generateURL(){
-        return "/api/news/" + this.country + "/" + this.category +"/";
+        return "/news/" + this.country + "/" + this.category +"/";
     },
     calculateArticlesOnPage(){
         this.pagedArticles = this.articles.slice((this.currentPage - 1) * this.rowsOnPage, this.currentPage * this.rowsOnPage);

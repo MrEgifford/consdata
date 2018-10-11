@@ -15,9 +15,13 @@ import com.jeden.recruit.consdata.exception.ConfigurationException;
 import com.jeden.recruit.consdata.news.core.NewsFacade;
 import com.jeden.recruit.consdata.news.dto.NewsDto;
 
-
+/**
+ * Main controller enabling API operations on the news.
+ * 
+ * @author Egifford
+ *
+ */
 @RestController
-@RequestMapping("/api")
 public class NewsController {
 	
 	@Autowired
@@ -33,6 +37,8 @@ public class NewsController {
 		Map<String, String> preparedParamMap = prepareParamMap(country, category, keyword.orElse(""));
 		return newsFacade.findForParameters(preparedParamMap);
 	}
+	
+	
 
 	private Map<String, String> prepareParamMap(String country, String category, String keyword) {
 		Map<String, String> parametersMap = new HashMap<>();

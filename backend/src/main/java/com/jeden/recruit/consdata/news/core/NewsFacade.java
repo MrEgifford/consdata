@@ -3,7 +3,11 @@ package com.jeden.recruit.consdata.news.core;
 import java.util.Map;
 
 import com.jeden.recruit.consdata.news.dto.NewsDto;
-
+/**
+ * 
+ * @author Egifford
+ *
+ */
 public interface NewsFacade {
 	
 	
