@@ -5,12 +5,12 @@ Aplikacja wyświetlająca najnowsze wiadomości z poszczególnych krajów.
 Zaimplementowana jako zadanie rekrutacyjne firmy Consdata
 
 # Wymagania
-- Java 8 
+- Java 8 (JDK)
 
 # Zastosowane technologie
 - Java 8
 - Spring Boot
-- Vue.js
+- Vue.js & Node
 - Dozer
 - Mockito
 - Lombok
@@ -25,12 +25,17 @@ W celu uruchomienia aplikacji należy uruchomić wykonywalny plik <code>NewsForC
 - Uruchomić za pomocą skryptu (Windows)
 <code>startApp.cmd</code>
 
-Aplikacja dostępna jest pod adresem <code>http://localhost:8080/</code>
+Aplikacja po urucchomieniu się dostępna będzie pod adresem <code>http://localhost:8080/</code>
 
 # Dla developera
 
 Możesz także zbudować aplikację u siebie na komputerze lokalnie. W tym celu najlepiej sklonować projekt na dysk.
-<code></code>
- a także uruchomić w katalogu głównym aplikacji (C:/.../ConsdataTask) komendę:
+
+<code>https://github.com/MrEgifford/consdata.git</code>
+
+ a także uruchomić w katalogu głównym aplikacji (<code>C:/.../ConsdataTask</code>) komendę:
 
 <code>mvn clean install</code>
+
+# Dokumentacja
+Projekt posiada automatycznie generowaną dokumentację dostępnego REST API. Generowanie następuje podczas budowania aplikacji (</code>mvn install </code>) i znajduje się w tworzonym przez Maven katalogu <code>backend/target/generated-docs</code>
