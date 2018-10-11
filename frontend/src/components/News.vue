@@ -50,7 +50,7 @@
                 <b-collapse id="collapse1" class="mt-2 ">
                     <b-card class="mx-auto col-md-6 ">
                         <b-input-group prepend="Wpisz szukaną frazę :">
-                            <b-form-input @keyup.enter="callRest()" v-model="keyword"></b-form-input>
+                            <b-form-input @keyup.native.enter="callRest" v-model="keyword"></b-form-input>
                         </b-input-group>
                     </b-card>
                 </b-collapse>

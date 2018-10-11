@@ -118,7 +118,31 @@
 										<include>index.html</include>
 									</includes>
 								</resource>
-								
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy distribution to main Module</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>../</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>../backend/target/</directory>
+									<includes>
+										<include>NewsForConsdataApp.jar</include>
+									</includes>
+								</resource>
+								<resource>
+									<directory>../backend/src/main/resources/</directory>
+									<includes>
+										<include>startApp.cmd</include>
+									</includes>
+								</resource>
 							</resources>
 						</configuration>
 					</execution>
