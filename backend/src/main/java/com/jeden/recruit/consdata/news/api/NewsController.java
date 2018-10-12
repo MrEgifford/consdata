@@ -38,7 +38,6 @@ public class NewsController {
 		return newsFacade.findForParameters(preparedParamMap);
 	}
 	
-	
 
 	private Map<String, String> prepareParamMap(String country, String category, String keyword) {
 		Map<String, String> parametersMap = new HashMap<>();

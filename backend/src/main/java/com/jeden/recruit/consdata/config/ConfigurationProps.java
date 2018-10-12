@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import com.jeden.recruit.consdata.cons.PropertyKey;
 import com.jeden.recruit.consdata.exception.ConfigurationException;
 
-@Configuration
 @Component
 @ConfigurationProperties(prefix = "news")
 public class ConfigurationProps {

@@ -13,7 +13,13 @@ import org.springframework.web.client.ResponseErrorHandler;
 import com.jeden.recruit.consdata.exception.RestClientException;
 
 
-
+/**
+ * Exception handler for handling exceptions thrown by the external REST systems
+ * the application is connecting to.
+ * 
+ * @author Egifford
+ *
+ */
 public class RestExceptionHandler implements ResponseErrorHandler {
 	
 	Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);

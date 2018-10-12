@@ -9,7 +9,12 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.jeden.recruit.consdata.exception.ConfigurationException;
-
+/**
+ * Exception handler for handling the exceptions thrown by the application.
+ * 
+ * @author Egifford
+ *
+ */
 @ControllerAdvice
 public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler {
 

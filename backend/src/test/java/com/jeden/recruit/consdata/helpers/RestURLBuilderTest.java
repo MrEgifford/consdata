@@ -3,6 +3,8 @@ package com.jeden.recruit.consdata.helpers;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -32,6 +34,19 @@ public class RestURLBuilderTest {
 			.withCountry(countryCode).buildURL();
 		
 		assertTrue(builtURI.toString().contains(countryCode));
+	}
+	
+	@Test
+	public void testURLBuild_manyParams() {
+		Map<String,String> parameters = new HashMap<String,String>();
+		parameters.put("testKey", "testValue");
+		parameters.put("testKey2", "testValue2");
+		
+		URI builtURI = RestURLBuilder.createRestURL(testApiURL, testApiKey)
+				.withParams(parameters).buildURL();
+		
+		assertTrue(builtURI.toString().contains("testKey=testValue"));
+		assertTrue(builtURI.toString().contains("testKey2=testValue2"));
 	}
 
 

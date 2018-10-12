@@ -34,7 +34,6 @@ public class RestNewsProvider implements NewsProvider {
 	@Autowired
 	private RestTemplateBuilder restTemplateBuilder;
 	
-
 	
 	@Override
 	public NewsResponse findAllForParams(Map<String, String> urlParameters) {
@@ -54,7 +53,6 @@ public class RestNewsProvider implements NewsProvider {
 				configuration.getProperty(PropertyKey.EXTERNAL_API_PATH);
 		Optional<String> apiKey = 
 				configuration.getProperty(PropertyKey.API_KEY);
-		
 		
 		return RestURLBuilder.createRestURL(externalApiURL.get(), apiKey.get())
 				.withParams(parameters)

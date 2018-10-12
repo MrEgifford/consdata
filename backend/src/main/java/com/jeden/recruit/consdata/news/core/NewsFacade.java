@@ -13,8 +13,7 @@ public interface NewsFacade {
 	
 	/**
 	 * General method returning news basing on the given parameters.
-	 * Allowed parameters may be found under: 
-	 * <i>https://newsapi.org/docs/endpoints/top-headlines</i> 
+	 *
 	 * 
 	 * @return container object with articles for given parameters.
 	 */
